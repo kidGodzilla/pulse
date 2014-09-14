@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Pulse</title>
+    <!--<link rel="stylesheet" href="css/framework7.min.css">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <!-- Favicon-->
+    <link href="img/icon-57.png" rel="shortcut icon">
+    <!-- iOS 7 iPad (retina) -->
+    <link href="img/icon-152.png" sizes="152x152" rel="apple-touch-icon">
+    <!-- iOS 6 iPad (retina) -->
+    <link href="img/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <!-- iOS 7 iPhone (retina) -->
+    <link href="img/icon-120.png" sizes="120x120" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone (retina) -->
+    <link href="img/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <!-- iOS 7 iPad -->
+    <link href="img/icon-76.png" sizes="76x76" rel="apple-touch-icon">
+    <!-- iOS 6 iPad -->
+    <link href="img/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone -->
+    <link href="img/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css" rel='stylesheet' type='text/css'>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Norican);
+
+        @-webkit-keyframes hover {
+            0%  {
+                transform: translateY(0);
+            }
+            50%  {
+                transform: translateY(-32px);
+            }
+            100%  {
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            background-color: #C6E4EF;
+        }
+
+        h1 {
+            display:block;
+            font-size: 100px;
+            font-family: 'Norican', cursive;
+            color:white;
+            letter-spacing: 1px;
+            width:40px;
+            line-height:40px;
+            margin:-20px 0 0 -20px;
+            text-shadow:0 2px 0 #8ed2d4,2px 3px 15px rgba(0,0,0,0.5);
+        }
+
+        .centered-text {
+            position: absolute;
+            top: 12.5%;
+            left: 50%;
+            margin-left: -90px;
+        }
+
+        .city {
+            position: fixed;
+            transition: all 2s ease-in-out;
+        }
+
+        .hover {
+            -webkit-animation: hover 5s infinite;
+            height: 500px;
+            top: 55%;
+            left: 50%;
+            margin-top: -250px;
+            margin-left: -250px;
+        }
+
+        .zoomed {
+            width: 100vw;
+            /*margin-top: -250px;*/
+            /*margin-left: -250px;*/
+            bottom: -40%;
+            left: 0;
+            opacity: 0.5;
+        }
+
+
+
+        .fb {
+            height: 50px;
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            margin-left: -116px;
+            opacity: 0.85;
+        }
+        .cloud {
+            height: 140px;
+            position: absolute;
+            top: 60px;
+            left: 100px;
+        }
+        .cloud-2 {
+            height: 140px;
+            position: absolute;
+            top: 160px;
+            right: 100px;
+        }
+        .cloud-3 {
+            height: 140px;
+            position: absolute;
+            top: 300px;
+            left: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud wow fadeIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>
+    <div class="cloud-2 wow fadeIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>
+    <div class="cloud-3 wow bounceIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>
+    <div class="centered-text"><h1>Pulse</h1></div>
+    <img class="city hover" src="http://jamesfuthey.com/hang/city.png">
+    <a href="pulse.html"><img class="fb" src="http://jamesfuthey.com/hang/Facebook_Connect_Button_lar.png"></a>
+</body>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Pulse</title>
+    <!--<link rel="stylesheet" href="css/framework7.min.css">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <!-- Favicon-->
+    <link href="img/icon-57.png" rel="shortcut icon">
+    <!-- iOS 7 iPad (retina) -->
+    <link href="img/icon-152.png" sizes="152x152" rel="apple-touch-icon">
+    <!-- iOS 6 iPad (retina) -->
+    <link href="img/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <!-- iOS 7 iPhone (retina) -->
+    <link href="img/icon-120.png" sizes="120x120" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone (retina) -->
+    <link href="img/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <!-- iOS 7 iPad -->
+    <link href="img/icon-76.png" sizes="76x76" rel="apple-touch-icon">
+    <!-- iOS 6 iPad -->
+    <link href="img/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone -->
+    <link href="img/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css" rel='stylesheet' type='text/css'>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Norican);
+
+        @import 'http://192.3.131.48/fontcdn/quicksand/stylesheet.css';
+
+        body {
+            background-color: #C6E4EF;
+        }
+
+        button {
+            position: relative;
+            top: 250px;
+            left: 75%;
+            margin-left: -25px;
+            background-color: #00CCA3;
+            border: 0 solid #7B868C;
+            padding: 28px 15px;
+            border-radius: 50%;
+            font-family: 'quicksand', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            /*box-shadow: 3px 5px 0 rgba(0,0,0,0.05);*/
+        }
+        .bubble {
+            position: absolute;
+            background-color: #fff;
+            top: -110px;
+            left: -405px;
+            height: 50px;
+            width: 250px;
+            padding: 14px;
+            border: 6px solid #323947;
+            border-radius: 10px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.05);
+            transform: scale(0.75);
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+        .bubble > span {
+            font-size: 1.2em;
+            position: relative;
+            top: -5px;
+        }
+        .bubble > p {
+            position: relative;
+            top: -5px;
+        }
+        .main {
+            position: absolute;
+            top: -120px;
+            left: -100px;
+            height: 100px;
+            width: 100px;
+            border: 9px solid #bbb;
+            border-radius: 50%;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.05);
+            transform: scale(0.5);
+            opacity: 0;
+            background-color: #f1c40f;
+            transition: all 0.4s ease-in-out;
+        }
+        button:hover .main, button:hover .bubble {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .main > img {
+            height: 101px;
+            position: relative;
+            top: -2px;
+            left: 0;
+        }
+        .triangle {
+            position: relative;
+            top: -4px;
+            left: 78px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 5px 0 5px;
+            border-color: #bbb transparent transparent transparent;
+            transform: rotate(-30deg);
+        }
+        .shadow-triangle {
+            opacity: 0.15;
+            top: -21px;
+            left: 83px;
+        }
+        .overlay {
+            display: none;
+            background-color: #000;
+            opacity: 0.15;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .pulse {
+            -webkit-animation-name: Pulse;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes Pulse {
+            from { opacity: 0.5; -webkit-box-shadow: 0 0 0 #3AFBFF }
+            50% { opacity: 1; -webkit-box-shadow: 0 0 48px #78FFFF }
+            to { opacity: 0.5; -webkit-box-shadow: 0 0 0 #3AFBFF }
+        }
+
+
+        .centered-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            margin-left: -90px;
+        }
+
+        .city {
+            position: fixed;
+            transition: all 2s ease-in-out;
+        }
+
+
+        .zoomed {
+            width: 100vw;
+            bottom: -40%;
+            left: 0;
+            opacity: 0.5;
+        }
+
+
+        h1 {
+            display:block;
+            font-size: 100px;
+            font-family: 'Norican', cursive;
+            color:white;
+            letter-spacing: 1px;
+            width:40px;
+            line-height:40px;
+            margin:-20px 0 0 -20px;
+            text-shadow:0 2px 0 #8ed2d4,2px 3px 15px rgba(0,0,0,0.5);
+        }
+
+        .centered-text {
+            position: absolute;
+            top: 12.5%;
+            left: 50%;
+            margin-left: -90px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!--<div class="cloud wow fadeIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>-->
+<!--<div class="cloud-2 wow fadeIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>-->
+<!--<div class="cloud-3 wow bounceIn"><img src="http://jamesfuthey.com/hang/cloud.png"></div>-->
+<div class="centered-text"><h1>Pulse</h1></div>
+<img class="city zoomed" src="http://jamesfuthey.com/hang/city.png">
+
+
+
+<div class="overlay"></div>
+<button class="pulse">
+    Sushi
+    <div class="main">
+        <img src="http://jamesfuthey.com/hang/thomas.png">
+        <div class="triangle"></div>
+        <div class="triangle shadow-triangle"></div>
+    </div>
+    <a href="map.html" style="color: #000">
+        <div class="bubble">
+            <span>Thomas Wu + 4 Others</span>
+            <p>Thomas is thinking about getting sushi near Capitol Hill.</p>
+        </div>
+    </a>
+</button>
+
+<button class="pulse" style="top: 500px;left: 25%">
+    &nbsp;&nbsp;Beer&nbsp;&nbsp;
+    <div class="main">
+        <img src="http://jamesfuthey.com/hang/thomas.png">
+        <div class="triangle"></div>
+        <div class="triangle shadow-triangle"></div>
+    </div>
+    <a href="map.html" style="color: #000">
+        <div class="bubble">
+            <span>Thomas Wu + 4 Others</span>
+            <p>Thomas is thinking about getting sushi near Capitol Hill.</p>
+        </div>
+    </a>
+</button>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+<script>
+
+</script>
+</html>
